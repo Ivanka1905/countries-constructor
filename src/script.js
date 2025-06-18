@@ -1,6 +1,6 @@
 "use strict";
 
-function Country(title, capital, population, area) {
+function Country({ title, capital, population, area } = {}) {
   this.title = title;
   this.capital = capital;
   this.population = population;
@@ -13,13 +13,18 @@ function Country(title, capital, population, area) {
   };
 }
 
-const ukraine = new Country("Ukraine", "Kyiv", "37.73", "603.628");
-const unitedKingdom = new Country(
-  "Great Britain",
-  "London",
-  "65.68",
-  "209.331"
-);
+const ukraine = new Country({
+  title: "Ukraine",
+  capital: "Kyiv",
+  population: "37.73",
+  area: "603.628",
+});
+const unitedKingdom = new Country({
+  title: "Great Britain",
+  capital: "London",
+  population: "65.68",
+  area: "209.331",
+});
 
 ukraine.showCountry();
 unitedKingdom.showCountry();
@@ -32,4 +37,5 @@ function getKeys(name) {
   }
 }
 getKeys(ukraine);
+console.log("--------------------")
 getKeys(unitedKingdom);
